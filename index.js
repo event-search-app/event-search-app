@@ -8,7 +8,7 @@ app.get('/', (req, res) => res.status(200).send('Relay server ready✨'));
 app.post('/', async (req, res) => {
   console.log('LINEからPOSTリクエストを受信✨');
   try {
-    const gasUrl = 'https://script.google.com/macros/s/AKfycbwmWLgBXDDrFTxDuoEQX4lZXGgr0nZYeTSC_ELmU0QLTERJwZfSa-Xm22Y03Azgb3f-tw/exec';
+    const gasUrl = 'https://script.google.com/macros/s/AKfycbywmI4yMBq4FAOvaAl7mnGr5LFBQQLptqqVmbPmCQCyfNtp5Knq2zNAdu32N1ty4z1LiA/exec';
     const result = await axios.post(gasUrl, req.body);
     console.log('GASへのリクエスト成功:', result.data);
     res.status(200).send(result.data);
