@@ -9,7 +9,7 @@ app.post('/', async (req, res) => {
   console.log('📩 LINEからPOSTリクエストを受信✨', req.body);
 
   try {
-    const gasUrl = 'https://script.google.com/macros/s/AKfycbwUSL0QVuUPjyO_t4Kkwbjui5YI0bSXEARt0zTgiaChly-Xis5SPCE7J-AhaAU8GZs3fQ/exec';
+    const gasUrl = 'https://script.google.com/macros/s/AKfycbwvOEHTEXWAUmrx28gu9h11uKd_5j51RbNB_G1oh8yuTRFzNVpfgUMqZ_1rI2wkcnxdyQ/exec';
     
     console.log('🚀 GASにリクエスト送信:', JSON.stringify(req.body));
 
