@@ -8,7 +8,7 @@ app.get('/', (req, res) => res.status(200).send('Relay server ready✨'));
 app.post('/', async (req, res) => {
   console.log('LINEからPOSTリクエストを受信✨');
   try {
-    const gasUrl = 'https://script.google.com/macros/s/AKfycbx_cmgYaAy9B8UAUOMjzPTtggYaExoFjihDdI-MlfiVV83Rx1dOnAvF927jER2RjY3hhQ/exec';
+    const gasUrl = 'https://script.google.com/macros/s/AKfycbwmWLgBXDDrFTxDuoEQX4lZXGgr0nZYeTSC_ELmU0QLTERJwZfSa-Xm22Y03Azgb3f-tw/exec';
     const result = await axios.post(gasUrl, req.body);
     console.log('GASへのリクエスト成功:', result.data);
     res.status(200).send(result.data);
@@ -26,7 +26,7 @@ app.listen(PORT, () => console.log(`Relay server started✨ (Port:${PORT})`));
 
 app.get('/test-gas', async (req, res) => {
   try {
-    const gasUrl = 'https://script.google.com/macros/s/AKfycbx_cmgYaAy9B8UAUOMjzPTtggYaExoFjihDdI-MlfiVV83Rx1dOnAvF927jER2RjY3hhQ/exec';
+    const gasUrl = 'https://script.google.com/macros/s/AKfycbwmWLgBXDDrFTxDuoEQX4lZXGgr0nZYeTSC_ELmU0QLTERJwZfSa-Xm22Y03Azgb3f-tw/exec';
     console.log("🚀 RenderからGASにテストリクエストを送ります！");
 
     const response = await axios.post(gasUrl, { test: "Render からのリクエストです！" });
