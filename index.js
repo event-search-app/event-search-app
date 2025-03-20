@@ -23,3 +23,18 @@ app.post('/', async (req, res) => {
 
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => console.log(`Relay server started✨ (Port:${PORT})`));
+
+app.get('/test-gas', async (req, res) => {
+  try {
+    const gasUrl = 'https://script.google.com/macros/s/AKfycbx_cmgYaAy9B8UAUOMjzPTtggYaExoFjihDdI-MlfiVV83Rx1dOnAvF927jER2RjY3hhQ/exec';
+    console.log("🚀 RenderからGASにテストリクエストを送ります！");
+
+    const response = await axios.post(gasUrl, { test: "Render からのリクエストです！" });
+
+    console.log("🎯 GASのレスポンス:", response.data);
+    res.send(response.data);
+  } catch (error) {
+    console.error("🔥 GASリクエストエラー:", error.toString());
+    res.status(500).send('GASへのリクエストに失敗しました');
+  }
+});
