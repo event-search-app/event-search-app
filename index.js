@@ -5,7 +5,7 @@ app.use(express.json());
 
 app.post('/', async (req, res) => {
   try {
-    const gasUrl = 'https://script.google.com/macros/s/AKfycbwFC_8V2oNT4gvsV9dYNL3FoeriHhIuBC8IarGuyAK-rXF4kDOY5K6vn0KCeCQS_p-Rsg/exec';
+    const gasUrl = 'https://script.google.com/macros/s/AKfycbzA0qrVo2dlb5Ri9SzAgq4U_D7kHHoBLxGMcpktsvtgdXzBp9rG614ncybyLDmiK9_C4A/exec';
     const result = await axios.post(gasUrl, req.body);
     res.status(200).send(result.data);
   } catch (error) {
@@ -14,5 +14,6 @@ app.post('/', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Relay server started✨`));
+// 👇ここが大事✨
+const PORT = process.env.PORT || 10000;  // PORTを10000に指定✨
+app.listen(PORT, () => console.log(`Relay server started✨ (Port:${PORT})`));
